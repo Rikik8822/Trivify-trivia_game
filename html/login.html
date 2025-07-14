@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>התחברות והרשמה</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <main class="main">
+        <h1>התחברות</h1>
+        <form id="login_form" class="form" autocomplete="off">
+            <div class="mb-3">
+                <label for="inputUsername" class="form-label">שם</label>
+                <input name="username" required class="form-control" id="inputUsername">
+            </div>
+            <div class="mb-3">
+                <label for="inputCode" class="form-label">סיסמה</label>
+                <input type="password" name="password" required class="form-control" id="inputCode">
+            </div>
+            <button class="btn btn-primary">התחברות</button>
+        </form>
+        <hr />
+        <h1>הרשמה</h1>
+        <form id="registration_form" class="form" autocomplete="off">
+            <div class="mb-3">
+                <label for="inputUsername1" class="form-label">שם</label>
+                <input name="username" required class="form-control" id="inputUsername1">
+            </div>
+            <div class="mb-3">
+                <label for="inputCode1" class="form-label">סיסמה</label>
+                <input type="password" name="password" required class="form-control" id="inputCode1">
+
+            </div>
+            <button class="btn btn-primary">הרשמה</button>
+        </form>
+    </main>
+    <script src="../js/global.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

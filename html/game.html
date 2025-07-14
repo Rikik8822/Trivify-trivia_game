@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טריוויה</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="main">
+        <header id="game_header">
+          <div id="game_level">שלב <span id="numLevel"></span></div>
+          <div id="clock">10</div>
+          <div id="numQ"><span id="currentQ"></span>/<span id="totalQ"></span></div>
+        </header>
+        <div id="game"></div>
+        <div id="answers"></div>
+    </div>
+    <audio id="correctSound" src="../sounds/correct.mp3"></audio>
+    <audio id="worngSound" src="../sounds/wrong.mp3"></audio>
+    <audio id="timerRing" src="../sounds/tic-tac-27828.mp3"></audio>
+    <script src="../js/global.js"></script>
+
+    <script src="../js/game.js"></script>
+    
+</body>
+</html>

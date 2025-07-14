@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+body {
+    direction: rtl;
+    background: #0c3177;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background-image: url(../images/wheels.svg);
+
+}
+
+.main {
+    background-image: url(../images/background.svg);
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    width: 640px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    padding: 27px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+p{
+    margin: 35px 0;
+    font-size: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.5) inset
+}
+.main:after {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* Choose Levels Page */
+#levels {
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: space-between;
+
+}
+
+.btnWrap {
+    display: flex;
+    position: relative;
+    width: 50%;
+}
+
+.btnWrap:not(:last-child):after {
+    content: "";
+    position: absolute;
+    border: solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 100%;
+    z-index: -1;
+    bottom: 50%;
+
+}
+
+.btnWrap:has(.done):after {
+    border-color: #ebbcee;
+}
+
+.btnWrap:nth-child(3n+1) {
+    width: 100%;
+    justify-content: center;
+}
+
+.btnWrap:nth-child(3n+1):after {
+    left: 50%;
+    right: 27px;
+    border-width: 0 2px 2px 0;
+}
+
+.btnWrap:nth-child(3n) {
+    justify-content: flex-end;
+}
+
+.btnWrap:nth-child(3n):after {
+    left: 27px;
+    right: 0;
+    border-width: 2px 0 0 2px;
+}
+
+.btnWrap:nth-child(3n-1):after {
+    right: 27px;
+    width: calc(200% - 50px);
+    border-width: 0 0 2px;
+}
+
+.btnWrap .journeyBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 0px;
+    padding: 0;
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.5) inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btnWrap .journeyBtn.done {
+    background: #50498e;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.btnWrap .journeyBtn.done:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 15px;
+    background: linear-gradient(20.18deg, #f4c262 7.03%, #f7415f 48.35%, #506cfd 89.17%);
+    font-size: 11px;
+}
+
+.star3:before {
+    content: '⭐⭐⭐';
+}
+
+.star2:before {
+    content: '⭐⭐';
+}
+
+.star1:before {
+    content: '⭐';
+}
+
+.star1.bonus:before {
+    content: '🌟';
+}
+
+.star2.bonus:before {
+    content: '🌟🌟';
+}
+
+.star3.bonus:before {
+    content: '🌟🌟🌟';
+}
+
+.btnWrap .journeyBtn.current {
+    background: linear-gradient(20.18deg, #f4c262 7.03%, #f7415f 48.35%, #506cfd 89.17%);
+    animation: breath 1s infinite alternate linear;
+    text-decoration: none;
+}
+
+.btnWrap .journeyBtn.locked {
+    background-color: #586b8a;
+    background-image: url(../images/lock.svg);
+    background-size: 50%;
+    color: transparent;
+}
+
+.btnWrap .journeyBtn.locked.bonus {
+    background-image: url(../images/wired-flat-412-gift.gif);
+    background-size: 80%;
+}
+
+.btnWrap:last-child .journeyBtn {
+    background-image: url(../images/wreath.png);
+    background-size: cover;
+    color: transparent;
+    
+}
+
+@keyframes breath {
+    to {
+        scale: 1.2;
+    }
+}
+
+
+/* Game */
+header#game_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.currentQustion {
+    margin: 35px 0;
+    font-size: 32px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+#answers button {
+    background: transparent;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    display: block;
+    color: #fff;
+    font-size: 120%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+#answers button.chosen {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1) inset;
+}
+
+#answers button.chosen.rightAns {
+    background: linear-gradient(67deg, #00abeb 0%, #07fff0 100%);
+}
+
+#answers button:not(.rightAns).chosen {
+    border-color: #833ab4;
+    background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 100%);
+}
+
+/* LOGIN */
+
+.form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-label {
+    display: block;
+    text-align: right;
+    font-size: 18px;
+}
+
+.form-control {
+    height: 34px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+    padding: 0 15px;
+    margin-top: 5px;
+}
+
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+.form button {
+    width: 60%;
+    height: 40px;
+    border: 3px solid #00abeb;
+    border-radius: 50px;
+    background-image: linear-gradient(67deg, #00abeb 0%, #07fff0 50%, #00abeb 100%);
+    background-size: 200%;
+    background-position: left;
+    transition: all .25s;
+    cursor: pointer;
+    margin: 10px auto 20px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.form button:hover {
+    background-position: right;
+}
